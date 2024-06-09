@@ -31,7 +31,7 @@ jobs:
         run: npm install
 
       - name: Build Angular project
-        run: ng build --configuration production --output-path=dist
+        run: ng build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
