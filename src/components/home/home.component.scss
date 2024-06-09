@@ -22,7 +22,7 @@
   border-radius: 12px;
   @include breakpoint(phone-landscape) {
     margin: 20px 0px;
-    font-size: 4px;
+    font-size: 8px;
   }
   &:hover {
     background-color: #ffba08;
