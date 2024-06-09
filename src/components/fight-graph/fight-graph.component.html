@@ -1,0 +1,33 @@
+<div class="outerContainer">
+  <div class="result-container d-flex">
+    <div class="content d-flex flex-column">
+      <p>You</p>
+      <p>Enemy</p>
+    </div>
+    <div
+      class="result d-flex flex-column"
+      *ngFor="let r of yourActionList; index as i"
+    >
+      <img
+        *ngIf="yourActionList[i]"
+        src="../../assets/images/happyface.svg"
+        alt=""
+      />
+      <img
+        *ngIf="!yourActionList[i]"
+        src="../../assets/images/angerface.svg"
+        alt=""
+      />
+      <img
+        *ngIf="enemyActionList[i]"
+        src="../../assets/images/happyface.svg"
+        alt=""
+      />
+      <img
+        *ngIf="!enemyActionList[i]"
+        src="../../assets/images/angerface.svg"
+        alt=""
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<p class="main-heading m-0 text-center">Prisoner's Delima</p>
+<hr class="heading-seperator" />
+<div class="heading text-center">Select Your Fighting Algorithm</div>
+<div class="select-algo d-flex justify-content-center">
+  <div class="container" *ngFor="let algo of allAlgoList; index as i">
+    <div
+      class="chips"
+      (click)="algoSelected(algo)"
+      [ngClass]="{ selected: selectedAlgoId == algo.id }"
+    >
+      <p>{{ algo.name }}</p>
+    </div>
+  </div>
+</div>
+
+<app-fight-graph [selectedAlgoIndex]="selectedAlgoId"></app-fight-graph>

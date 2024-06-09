@@ -1,0 +1,22 @@
+.result-container {
+  background-color: rgb(255, 206, 206);
+  margin-left: 20px;
+  border: 8px solid #1c3144;
+  border-radius: 12px;
+  height: 200px;
+  img {
+    width: 50px;
+    height: 50%;
+    display: flex;
+    align-items: center;
+  }
+  .content {
+    padding: 10px;
+    p {
+        font-size: 12px;
+      height: 50%;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

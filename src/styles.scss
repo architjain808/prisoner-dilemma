@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "./mixins.scss";
+html,
+body {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  background: #93032e;
+  p {
+    margin: 0;
+  }
+}
+
+.main-heading {
+  font-family: "Nabla", system-ui;
+  font-size: 100px;
+  @include breakpoint("tablet-portrait-sm") {
+    font-size: 75px;
+  }
+  @include breakpoint("phone-landscape") {
+    font-size: 60px;
+  }
+  @include breakpoint("phone") {
+    font-size: 40px;
+  }
+}

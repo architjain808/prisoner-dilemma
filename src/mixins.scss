@@ -1,0 +1,50 @@
+@mixin breakpoint($point) {
+  $phone: "(max-width: 480px)";
+  $phone-sm: "(max-width: 360px)";
+  $phone-landscape: "(max-width: 575px)";
+  $tablet-portrait-sm: "(max-width: 767px)";
+  $tablet-portrait: "(max-width: 991px)";
+  $tablet-landscape: "(max-width: 1024px)";
+  $dekstop: "(max-width: 1280px)";
+  $large: "(max-width: 1360px)";
+
+  @if $point == phone-sm {
+    @media #{$phone-sm} {
+      @content;
+    }
+  } @else if $point == phone {
+    @media #{$phone} {
+      @content;
+    }
+  } @else if $point == phone-landscape {
+    @media #{$phone-landscape} {
+      @content;
+    }
+  } @else if $point == tablet-portrait-sm {
+    @media #{$tablet-portrait-sm} {
+      @content;
+    }
+  } @else if $point == tablet-portrait {
+    @media #{$tablet-portrait} {
+      @content;
+    }
+  } @else if $point == tablet-landscape {
+    @media #{$tablet-landscape} {
+      @content;
+    }
+  } @else if $point == dekstop {
+    @media #{$dekstop} {
+      @content;
+    }
+  } @else if $point == large {
+    @media #{$large} {
+      @content;
+    }
+  }
+}
+
+$colors: (red, blue, green, yellow, purple, orange, pink, violet);
+
+@function random-color($index) {
+  @return nth($colors, $index % length($colors) + 1);
+}
