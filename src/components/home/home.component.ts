@@ -10,14 +10,20 @@ import { algoModel } from 'src/models/algo.mode';
 })
 export class HomeComponent implements OnInit {
   selectedAlgoId = 1;
+  selectedEnemyAlgoId = 4;
   allAlgoList: algoModel[] = allAlgoList;
 
   constructor(private algo: algorithms) {}
 
   ngOnInit(): void {}
 
-  algoSelected(algo: algoModel) {
-    this.selectedAlgoId = algo.id;
-    this.algo.selectedAlgo.next(algo.id);
+  algoSelected(algo: algoModel, isenemy = false) {
+    if (!isenemy) {
+      this.selectedAlgoId = algo.id;
+      this.algo.selectedAlgo.next(algo.id);
+    } else {
+      this.selectedEnemyAlgoId = algo.id;
+      this.algo.selectedEnemyAlgo.next(algo.id);
+    }
   }
 }

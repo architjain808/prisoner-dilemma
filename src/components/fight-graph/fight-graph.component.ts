@@ -15,18 +15,29 @@ export class FightGraphComponent implements OnInit, OnDestroy {
   yourActionList: boolean[] = [];
   enemyScore = 0;
   yourScore = 0;
-  indexSub!: Subscription;
+  indexSub!: Subscription[];
   constructor(private algos: algorithms) {}
 
   ngOnInit(): void {
     this.selectedAlgoIndex;
-    // this.fightFuntion();
-    this.indexSub = this.algos.selectedAlgo.subscribe((res) => {
-      this.enemyActionList = [];
-      this.yourActionList = [];
-      this.selectedAlgoIndex = res;
-      this.fightFuntion();
-    });
+    this.indexSub = [
+      this.algos.selectedAlgo.subscribe((res) => {
+        this.enemyActionList = [];
+        this.yourActionList = [];
+        this.yourScore = 0;
+        this.enemyScore = 0;
+        this.selectedAlgoIndex = res;
+        this.fightFuntion();
+      }),
+      this.algos.selectedEnemyAlgo.subscribe((res) => {
+        this.enemyActionList = [];
+        this.yourActionList = [];
+        this.yourScore = 0;
+        this.enemyScore = 0;
+        this.enemyId = res;
+        this.fightFuntion();
+      }),
+    ];
   }
 
   getAlgoFn(algoId: number) {
@@ -52,7 +63,7 @@ export class FightGraphComponent implements OnInit, OnDestroy {
   fightFuntion() {
     const selectedAlgoFn = this.getAlgoFn(this.selectedAlgoIndex);
     const enemyAlgoFn = this.getAlgoFn(this.enemyId);
-    for (let i = 0; i < 19; i++) {
+    for (let i = 0; i < 190; i++) {
       const enemyAction = enemyAlgoFn(
         i,
         this.enemyActionList,
@@ -85,6 +96,8 @@ export class FightGraphComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.indexSub.unsubscribe;
+    this.indexSub.forEach((res) => {
+      res.unsubscribe();
+    });
   }
 }

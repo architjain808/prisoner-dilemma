@@ -4,7 +4,7 @@
   color: white;
   font-size: 28px;
   @include breakpoint(phone-landscape) {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .container {
@@ -21,7 +21,8 @@
   padding: 10px;
   border-radius: 12px;
   @include breakpoint(phone-landscape) {
-    font-size: 8px;
+    margin: 20px 0px;
+    font-size: 4px;
   }
   &:hover {
     background-color: #ffba08;

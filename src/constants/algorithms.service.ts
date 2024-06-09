@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class algorithms {
   selectedAlgo = new BehaviorSubject(1);
+  selectedEnemyAlgo = new BehaviorSubject(4);
   constructor() {}
 
   angerAlgo(

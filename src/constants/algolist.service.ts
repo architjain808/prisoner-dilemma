@@ -10,7 +10,7 @@ export const allAlgoList: algoModel[] = [
     id: 2,
   },
   {
-    name: 'Peace Lover',
+    name: 'Peace',
     id: 3,
   },
   {
